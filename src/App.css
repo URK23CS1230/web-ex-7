@@ -1,38 +1,131 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Smooth violet background gradient */
+.page {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Card style */
+.card {
+  background: white;
+  padding: 30px 25px;
+  border-radius: 20px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Title animation */
+.title {
+  color: #5a00e0;
+  margin-bottom: 20px;
+  font-weight: 600;
+  animation: pop-in 1s ease;
+}
+
+@keyframes pop-in {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Input styles */
+.input-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.input-group label {
+  font-weight: 500;
+  color: #444;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 8px rgba(106, 17, 203, 0.4);
+  outline: none;
+}
+
+/* Button styling */
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.calc-btn, .reset-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.calc-btn {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.calc-btn:hover {
+  transform: scale(1.05);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.reset-btn {
+  background: #e0e0e0;
+  color: #333;
 }
+
+.reset-btn:hover {
+  background: #d0d0d0;
+  transform: scale(1.05);
+}
+
+/* Result section animation */
+.result {
+  margin-top: 25px;
+  background: rgba(240, 240, 255, 0.7);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: left;
+  color: #333;
+  box-shadow: inset 0 0 8px rgba(106, 17, 203, 0.2);
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease;
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(40px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Fade-in animation for card load */
+.fade-in {
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
